@@ -1,8 +1,8 @@
-import './css/App.scss';
+import "./css/App.scss";
 
-import Navbar from './Navbar';
-import Home from './Home';
-import Footer from './Footer';
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,15 +11,15 @@ function App() {
       <Home />
       <Footer />
       {
-      // Use this code if you ever use multiple pages (HashRouter if github pages, Browser Router for AWS)
-      // <HashRouter>
-      //   <Navbar />
-      //   <Routes>
-      //     <Route path="/" element={<Home />}/>
-      //     <Route path="/newpage" element={<Newpage />}/>
-      //   </Routes>
-      //   <Footer />
-      // </HashRouter>
+        // Use this code if you ever use multiple pages (HashRouter if github pages, Browser Router for AWS)
+        // <HashRouter>
+        //   <Navbar />
+        //   <Routes>
+        //     <Route path="/" element={<Home />}/>
+        //     <Route path="/newpage" element={<Newpage />}/>
+        //   </Routes>
+        //   <Footer />
+        // </HashRouter>
       }
     </div>
   );
