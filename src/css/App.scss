@@ -1,0 +1,19 @@
+$nav-height: 50px;
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav{
+  height: $nav-height;
+  img{
+    height: 100%;
+  }
+}
+
+.section{
+  border: 2px solid black;
+  width: 100%;
+}
