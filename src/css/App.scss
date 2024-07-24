@@ -1,5 +1,13 @@
 $nav-height: 50px;
 
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -8,12 +16,51 @@ body {
 
 nav{
   height: $nav-height;
+  background-color: pink;
   img{
     height: 100%;
   }
 }
 
-.section{
-  border: 2px solid black;
-  width: 100%;
+// .App{
+//   overflow-y: scroll;
+//   scroll-snap-type: mandatory; /* for older browsers */
+//   scroll-snap-points-y: repeat(100vh); /* for older browsers */
+//   scroll-snap-type: y mandatory;
+//   height: 100vh;
+// }
+
+.section, footer{
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+nav{
+  scroll-snap-align: start;
+  position: relative;
+}
+
+#hero{
+  background-color: red;
+}
+
+#about{
+  background-color: orange;
+}
+
+#skills{
+  background-color: yellow;
+}
+
+#experience{
+  background-color: green;
+}
+
+#contact{
+  background-color: blue;
+}
+
+footer{
+  background-color: purple;
 }
