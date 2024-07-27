@@ -1,4 +1,5 @@
 import React from "react";
+import StockImage from "./StockImage";
 
 function Experience() {
   return (
@@ -7,7 +8,7 @@ function Experience() {
         <h2>Experience Section</h2>
         <span>Share experience/link to people I've worked with</span>
       </div>
-      <img src="https://picsum.photos/200/300" alt="experience pic" />
+      <StockImage />
     </div>
   );
 }

@@ -1,13 +1,15 @@
 import React from "react";
 
+import StockImage from "./StockImage";
+
 function Hero() {
   return (
     <div id="hero" className="section">
       <div className="text-area">
-        <h1>Hero Section</h1>
-        <span>Some tagline</span>
+        <h1>Andrew Ras</h1>
+        <span>Empowering small businesses with reliable, high quality websites</span>
       </div>
-      <img src="https://picsum.photos/200/300" alt="hero pic" />
+      <StockImage />
     </div>
   );
 }

@@ -16,33 +16,30 @@ body {
 
 nav{
   height: $nav-height;
-  background-color: pink;
+  background-color: rgba($color: white, $alpha: 0.75);
   img{
     height: 100%;
   }
 }
 
-// .App{
-//   overflow-y: scroll;
-//   scroll-snap-type: mandatory; /* for older browsers */
-//   scroll-snap-points-y: repeat(100vh); /* for older browsers */
-//   scroll-snap-type: y mandatory;
-//   height: 100vh;
-// }
-
 .section, footer{
-  height: 100vh;
-  scroll-snap-align: start;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav{
   scroll-snap-align: start;
-  position: relative;
 }
 
 #hero{
   background-color: red;
+  justify-content: space-around;
+  img{
+    height: 500px;
+    width: 700px;
+  }
 }
 
 #about{
@@ -51,6 +48,11 @@ nav{
 
 #skills{
   background-color: yellow;
+  flex-direction: column;
+  .upper-area{
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 #experience{
