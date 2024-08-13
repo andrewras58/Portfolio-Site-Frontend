@@ -1,38 +1,20 @@
 import React from "react";
 
-import StockImage from "./StockImage";
-
 function Skills() {
   return (
     <div id="skills" className="section">
-      <h2>Skills Section</h2>
-      <div className="upper-area">
-        <div className="skill-text" id="frontend">
-          <h3>Frontend Skills</h3>
-          <ul>
-            <li>React</li>
-            <li>JavaScript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-        </div>
-        <StockImage />
-        <div className="skill-text" id="backend">
-          <h3>Backend Skills</h3>
-          <ul>
-            <li>Python</li>
-            <li>Node.JS</li>
-            <li>Nginx</li>
-            <li>Amazon Web Services</li>
-          </ul>
-        </div>
-      </div>
-      <div className="lower-area">
-        <h3>General Skills</h3>
-        <ul>
-          <li>skill 1</li>
-        </ul>
-      </div>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="react-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="javascrript-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="html-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="css-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="scss-icon"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" alt="docker-icon"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="python-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg" alt="django-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg" alt="flask-icon"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="nginx-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="amazonwebservices-icon" />
     </div>
   );
 }

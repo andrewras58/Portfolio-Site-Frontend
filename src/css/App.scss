@@ -48,10 +48,12 @@ nav{
 
 #skills{
   background-color: yellow;
-  flex-direction: column;
-  .upper-area{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  img{
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
   }
 }
 
@@ -61,8 +63,18 @@ nav{
 
 #contact{
   background-color: blue;
+  display: flex;
+  flex-direction: column;
+  form{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 footer{
   background-color: purple;
+  img{
+    width: 2rem;
+    height: 2rem;
+  }
 }

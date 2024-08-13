@@ -14,11 +14,12 @@ function Contact() {
     name: Yup.string().max(15).required("Please provide your name so I can get back to you!"),
     message: Yup.string().max(500).required("Please enter a message!")
   });
-  const onSubmit = (data) => {
+  async function onSubmit(data) {
     const serverEndpoint = "http://localhost:3001/mail"    // temporary until I get my backend deployed somewhere
-    axios.post(serverEndpoint, data).then((response) => {
+    await axios.post(serverEndpoint, data).then((response) => {
       console.log('you fiddled the riddle!')
     });
+    window.location.reload();
   }
 
   return (
