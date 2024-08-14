@@ -2,10 +2,11 @@ $nav-height: 50px;
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Georgia";
 }
 
 body {
@@ -14,66 +15,107 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-nav{
+nav {
   height: $nav-height;
   background-color: rgba($color: white, $alpha: 0.75);
-  img{
+  img {
     height: 100%;
   }
 }
 
-.section, footer{
+.section,
+footer {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-nav{
+nav {
   scroll-snap-align: start;
 }
 
-#hero{
-  background-color: red;
+#hero {
+  //background-color: red;
   justify-content: space-around;
-  img{
+  img {
     height: 500px;
     width: 700px;
   }
 }
 
-#about{
-  background-color: orange;
+#about {
+  //background-color: orange;
 }
 
-#skills{
-  background-color: yellow;
+#skills {
+  //background-color: yellow;
   display: flex;
   flex-wrap: wrap;
-  img{
+  img {
     height: 5rem;
     width: 5rem;
     margin: 0.5rem;
   }
 }
 
-#experience{
-  background-color: green;
+#experience {
+  //background-color: green;
 }
 
-#contact{
+#contact {
   background-color: blue;
   display: flex;
   flex-direction: column;
-  form{
+  form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  .field-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 100%;
+    max-width: 75rem;
+    label {
+      font-size: 2rem;
+    }
+    textarea {
+      height: 10rem;
+      width: 100%;
+      font-size: 1.5rem;
+      resize: none;
+    }
+    input {
+      height: 3rem;
+      font-size: 1.5rem;
+    }
+    span {
+      bottom: -1.5rem;
+      font-size: 1rem;
+    }
+  }
+  button {
+    margin-top: 1.5rem;
+    margin-bottom: 1.25rem;
+    width: 75%;
+    height: 3rem;
+    font-size: 2rem;
+    max-width: 20rem;
+    cursor: pointer;
   }
 }
 
-footer{
-  background-color: purple;
-  img{
+footer {
+  //background-color: purple;
+  img {
     width: 2rem;
     height: 2rem;
   }
