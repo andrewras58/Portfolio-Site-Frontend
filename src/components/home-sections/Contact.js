@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -18,11 +18,16 @@ function Contact() {
     message: Yup.string().max(500).required("Please enter a message"),
   });
   async function onSubmit(data) {
-    const serverEndpoint = "http://localhost:3001/mail"; // temporary until I get my backend deployed somewhere
-    await axios.post(serverEndpoint, data).then((response) => {
-      console.log("you fiddled the riddle!");
-    });
-    window.location.reload();
+    const serverEndpoint = "http://localhost:3001/api/mail"; // temporary until I get my backend deployed somewhere
+    await axios
+      .post(serverEndpoint, data)
+      .then((response) => {
+        console.log("email sent successfully");
+        window.location.reload();
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
 
   useEffect(() => {
@@ -86,7 +91,9 @@ function Contact() {
               style={{ color: "red", position: "absolute" }}
             />
           </div>
-          <button type="submit" onClick={() => setFormSubmitted(true)}>Send</button>
+          <button type="submit" onClick={() => setFormSubmitted(true)}>
+            Send
+          </button>
         </Form>
       </Formik>
     </div>

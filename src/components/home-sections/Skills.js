@@ -15,6 +15,7 @@ function Skills() {
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg" alt="flask-icon"/>
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="nginx-icon" />
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="amazonwebservices-icon" />
+      <img src="https://www.vectorlogo.zone/logos/linode/linode-icon.svg" alt="linode-icon" />
     </div>
   );
 }
