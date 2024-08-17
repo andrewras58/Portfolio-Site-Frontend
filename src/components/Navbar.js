@@ -1,11 +1,9 @@
 import React from "react";
-let placeholderIMG = require("../assets/placeholder.svg");
-
 function Navbar() {
   return (
     <nav>
-      <img src={placeholderIMG.default} alt="site logo" />
-      Navbar
+      <a href="/">Home</a>
+      <a href="/#contact">Contact</a>
     </nav>
   );
 }

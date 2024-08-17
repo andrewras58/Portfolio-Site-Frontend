@@ -1,14 +1,17 @@
 import React from "react";
-import StockImage from "./StockImage";
+
+import ExperienceWidget from "./ExperienceWidget";
 
 function Experience() {
   return (
     <div id="experience" className="section">
-      <div className="text-area">
-        <h2>Experience Section</h2>
-        <span>Share experience/link to people I've worked with</span>
-      </div>
-      <StockImage />
+      <h2>Experience</h2>
+      <ExperienceWidget
+        image={require("../../assets/gals.png")}
+        link="https://galscr.com"
+        description="I worked with a court reporting agency to create their website."
+        title="Global Access Litigation Services"
+      />
     </div>
   );
 }

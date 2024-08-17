@@ -7,15 +7,24 @@ function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const initialValues = {
     email: "",
+    emailValidation: "",
     name: "",
     message: "",
   };
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Please enter a valid email")
+      .max(100)
       .required("Please provide your email"),
-    name: Yup.string().max(15).required("Please provide your name"),
-    message: Yup.string().max(500).required("Please enter a message"),
+    emailValidation: Yup.string()
+      .oneOf([Yup.ref("email"), null], "Emails must match")
+      .required("Please confirm your email"),
+    name: Yup.string()
+      .max(100)
+      .required("Please provide your name"),
+    message: Yup.string()
+      .max(500)
+      .required("Please enter a message"),
   });
   async function onSubmit(data) {
     const serverEndpoint = "http://localhost:3001/api/mail"; // temporary until I get my backend deployed somewhere
@@ -47,12 +56,7 @@ function Contact() {
         <Form className="form-container">
           <div className="field-container">
             <label htmlFor="inputEmail">Email</label>
-            <Field
-              autoComplete="off"
-              id="inputEmail"
-              name="email"
-              placeholder="example@email.com"
-            />
+            <Field autoComplete="off" id="inputEmail" name="email" />
             <ErrorMessage
               id="email-error"
               name="email"
@@ -61,13 +65,22 @@ function Contact() {
             />
           </div>
           <div className="field-container">
-            <label htmlFor="inputName">Name</label>
+            <label htmlFor="inputEmailValidation">Confirm Email</label>
             <Field
               autoComplete="off"
-              id="inputName"
-              name="name"
-              placeholder="person"
+              id="inputEmailValidation"
+              name="emailValidation"
             />
+            <ErrorMessage
+              id="email-validation-error"
+              name="emailValidation"
+              component="span"
+              style={{ color: "red", position: "absolute" }}
+            />
+          </div>
+          <div className="field-container">
+            <label htmlFor="inputName">Name</label>
+            <Field autoComplete="off" id="inputName" name="name" />
             <ErrorMessage
               id="name-error"
               name="name"
