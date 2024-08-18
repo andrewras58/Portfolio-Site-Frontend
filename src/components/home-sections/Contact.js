@@ -27,7 +27,7 @@ function Contact() {
       .required("Please enter a message"),
   });
   async function onSubmit(data) {
-    const serverEndpoint = "http://localhost:3001/api/mail"; // temporary until I get my backend deployed somewhere
+    const serverEndpoint = "api/mail"; // temporary until I get my backend deployed somewhere
     await axios
       .post(serverEndpoint, data)
       .then((response) => {

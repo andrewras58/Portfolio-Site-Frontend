@@ -13,8 +13,13 @@ RUN npm install
 #Copying all the application source code and files to the working directory `app`
 COPY . .
 
-#Exposing the container to run on this port
-EXPOSE 3000
+RUN npm run build
+
+FROM nginx:1.27.1-alpine-slim
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80
 
 #Start the React App
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
