@@ -10,9 +10,13 @@ function Home() {
   return (
     <div className="home-container">
       <Hero />
-      <About />
-      <Skills />
+      <hr />
+      <div id="about-skills" className="anchor-point section">
+        <About />
+        <Skills />
+      </div>
       <Experience />
+      <hr />
       <Contact />
     </div>
   );

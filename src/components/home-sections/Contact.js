@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Contact() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false); // this is to only start showing errors when a form after fails the validation test
+  // I didn't find a convenient way to integrate ReCAPTCHA into Formik without rewriting everything, so for now it is "separate"
+  const [recaptchaToken, setRecaptchaToken] = useState("");
   const initialValues = {
     email: "",
     emailValidation: "",
@@ -19,32 +22,32 @@ function Contact() {
     emailValidation: Yup.string()
       .oneOf([Yup.ref("email"), null], "Emails must match")
       .required("Please confirm your email"),
-    name: Yup.string()
-      .max(100)
-      .required("Please provide your name"),
-    message: Yup.string()
-      .max(500)
-      .required("Please enter a message"),
+    name: Yup.string().max(100).required("Please provide your name"),
+    message: Yup.string().max(500).required("Please enter a message"),
   });
+
   async function onSubmit(data) {
-    const serverEndpoint = "api/mail"; // temporary until I get my backend deployed somewhere
+    if (!recaptchaToken) {
+      alert(`Please click "I'm not a robot"`);
+      return;
+    }
+    data["recaptchaToken"] = recaptchaToken; // attach the recaptchaToken to the rest of the Formik data
+
     await axios
-      .post(serverEndpoint, data)
+      .post(process.env.REACT_APP_email_endpoint, data)
       .then((response) => {
-        console.log("email sent successfully");
+        alert(response.data);
         window.location.reload();
       })
       .catch((error) => {
+        console.log('error here');
+        console.log(error);
         alert(error);
       });
   }
 
-  useEffect(() => {
-    console.log(formSubmitted);
-  }, [formSubmitted]);
-
   return (
-    <div id="contact" className="section">
+    <div id="contact" className="section anchor-point">
       <h2>Contact</h2>
       <Formik
         initialValues={initialValues}
@@ -104,6 +107,13 @@ function Contact() {
               style={{ color: "red", position: "absolute" }}
             />
           </div>
+          <ReCAPTCHA
+            sitekey={process.env.REACT_APP_recaptcha_public_key}
+            onChange={(token) => {
+              setRecaptchaToken(token);
+            }}
+            style={{transform:"scale(0.85)", transformOrigin:"50% 50%"}}
+          />
           <button type="submit" onClick={() => setFormSubmitted(true)}>
             Send
           </button>

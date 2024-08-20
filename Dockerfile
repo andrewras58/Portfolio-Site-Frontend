@@ -10,6 +10,12 @@ COPY package.json .
 #Installing all the tools and dependencies in the container
 RUN npm install
 
+ARG REACT_APP_email_endpoint
+ENV REACT_APP_email_endpoint=${REACT_APP_email_endpoint}
+
+ARG REACT_APP_recaptcha_public_key
+ENV REACT_APP_recaptcha_public_key=${REACT_APP_recaptcha_public_key}
+
 #Copying all the application source code and files to the working directory `app`
 COPY . .
 
