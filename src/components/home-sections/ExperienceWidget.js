@@ -6,7 +6,7 @@ function ExperienceWidget({image, link, description, title, time, technologies})
     <div className='experience-widget'>
       <div className="description">
         <div className="experience-widget-text">
-          <h3>{title}</h3>
+          <h3><a href={link} target="_blank" rel="noreferrer">{title}</a></h3>
           <h4>{time}</h4>
           <p>{description}</p>
         </div>

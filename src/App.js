@@ -10,17 +10,6 @@ function App() {
       <Navbar />
       <Home />
       <Footer />
-      {
-        // Use this code if you ever use multiple pages (HashRouter if github pages, Browser Router for AWS)
-        // <HashRouter>
-        //   <Navbar />
-        //   <Routes>
-        //     <Route path="/" element={<Home />}/>
-        //     <Route path="/newpage" element={<Newpage />}/>
-        //   </Routes>
-        //   <Footer />
-        // </HashRouter>
-      }
     </div>
   );
 }
